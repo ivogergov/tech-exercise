@@ -1,0 +1,16 @@
+<div data-symbol="{{symbolInput}}" class="card {{conditionalClass quote.change1DayPercent}}" data-tooltip="{{basic.name}}">
+  <div class="card-title">
+    {{symbolInput}}
+  </div>
+  <div class="card-body">
+    <div class="card-body__price">
+      <div class="price">
+        <span class="price__hover">{{precision quote.openPrice 3}}</span>
+        <span class="price__hover_lost">{{precision quote.lastPrice 3}}</span>
+      </div>
+      <div class="change-percent {{conditionalClass quote.change1DayPercent}}" data-color="{{conditionalClass quote.change1DayPercent}}">
+        {{precision quote.change1DayPercent 3}}%
+      </div>
+    </div>
+  </div>
+</div>
