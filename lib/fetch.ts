@@ -40,7 +40,8 @@ const httpClient = (function () {
     return new Promise((resolve, reject) => {
 
       // Should be updated so we can track the time of every request and not just the last one
-      const isFreshCache = lastUpdated[joinedParams] && (new Date().getMilliseconds() - lastUpdated[joinedParams].getMilliseconds()) < 60000;
+
+      const isFreshCache = lastUpdated[joinedParams] && (new Date().getTime() - new Date(lastUpdated[joinedParams]).getTime()) < 60000;
       if (isFreshCache  && cachedElements?.[joinedParams]?.length > 0) {
         // Just to check if the cache is working
         console.log(`[${joinedParams}]  Using cached elements`);
@@ -48,6 +49,7 @@ const httpClient = (function () {
         resolve(cachedElements[joinedParams]);
         return;
       }
+      console.log(`[${joinedParams}]  Without cache`);
 
       // Using the default https library
       let req = https.request({

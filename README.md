@@ -43,10 +43,19 @@ We would like you to display the information from the following symbols (these a
 | Pound/Dollar    | `GBPUSD`   |
 | Brent Crude Oil | `IB.1:IEU` |
 
-# If you want to use the sample server with a vanilla JS or React
+# If you want to use the sample server with a vanilla JS or React in .env file
 
 ```JS APP_MODE=simple ```
 
 ```React APP_MODE=react```
+
+## You can run 
+
+```npm start``` - To start the webserver
+
+```npm test``` - To run the tests
+
+```npm run e2e``` - To start the E2E tests
+
 
 ### As a improvement, we can subscribe for data changes to the API
